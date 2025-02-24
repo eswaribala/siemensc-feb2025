@@ -21,6 +21,17 @@ string[] users = new string[10];
 for (int i = 0; i < users.Length; i++)
     users[i] = Faker.Name.FullName();
 
+int[] numbers=new int[10];
+for (int i = 0; i < numbers.Length; i++)
+    numbers[i] = Faker.RandomNumber.Next(100, 1000);
+
+numbers.ToList().ForEach(x => Console.WriteLine(x));
+Console.WriteLine("Enter Search Element");
+int searchElement = int.Parse(Console.ReadLine());
+
+Console.WriteLine($"Found the element in array={RefDemo.ProcessData(ref numbers,searchElement)}");
+
+
 //display 10 users
 
 //foreach (var user in users)
@@ -30,6 +41,7 @@ for (int i = 0; i < users.Length; i++)
 //users.ToList().ForEach(x => Console.WriteLine(x));
 
 //Jagged Array
+/*
 Console.WriteLine("Enter no of customers");
 int rows=int.Parse(Console.ReadLine());
 int[][] emiArray=new int[rows][];
@@ -57,7 +69,7 @@ for (int i = 0; i < rows; i++)
 }
 
 
-
+*/
 
 
 
