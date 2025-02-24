@@ -17,3 +17,4 @@ H:\SiemensC#TrainingFeb2025\TestProject\bin\Debug\net8.0\de-DE\Faker.Net.6.0.res
 H:\SiemensC#TrainingFeb2025\TestProject\obj\Debug\net8.0\TestProject.csproj.AssemblyReference.cache
 H:\SiemensC#TrainingFeb2025\TestProject\obj\Debug\net8.0\TestProject.csproj.CopyComplete
 H:\SiemensC#TrainingFeb2025\TestProject\bin\Debug\net8.0\Test.xml
+H:\SiemensC#TrainingFeb2025\TestProject\obj\Debug\net8.0\TestProject.sourcelink.json

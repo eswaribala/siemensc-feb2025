@@ -8,7 +8,60 @@
 //variables
 
 using TestProject;
+//verbatim
+string testData=@"
+      112, First Street
+      Dr.Parakasam Nagar
+      Chennai - 602024
+    ";
 
+Console.WriteLine(testData);
+string[] users = new string[10];
+
+for (int i = 0; i < users.Length; i++)
+    users[i] = Faker.Name.FullName();
+
+//display 10 users
+
+//foreach (var user in users)
+//   Console.WriteLine(user);
+
+//LINQ
+//users.ToList().ForEach(x => Console.WriteLine(x));
+
+//Jagged Array
+Console.WriteLine("Enter no of customers");
+int rows=int.Parse(Console.ReadLine());
+int[][] emiArray=new int[rows][];
+
+for (int i = 0;i < rows; i++)
+{
+    Console.WriteLine($"Enter no of emis for customer{i}");
+    int cols = int.Parse(Console.ReadLine());
+    emiArray[i]=new int[cols];
+    for (int j = 0; j < cols; j++)
+    {
+        Console.WriteLine($"Enter  emis amount for EMI{j}");
+        emiArray[i][j] = int.Parse(Console.ReadLine());
+    }
+
+}
+
+for (int i = 0; i < rows; i++)
+{
+    for(int j = 0; j < emiArray[i].Length; j++)
+    {
+        Console.Write($"{emiArray[i][j]},");
+    }
+    Console.WriteLine("\n");
+}
+
+
+
+
+
+
+/*
 Console.WriteLine("Enter Name");
 string name=Console.ReadLine();
 Console.WriteLine("Enter DOB(YYYY-MM-DD)");
@@ -28,4 +81,5 @@ if (Enum.TryParse(gender, true, out genderResponse)) {
     {
     Console.WriteLine("Could Not be Parsed");
     }
+*/
 Console.ReadKey();
