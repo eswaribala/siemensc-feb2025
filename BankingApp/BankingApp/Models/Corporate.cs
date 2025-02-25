@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace BankingApp.Models
 {
-    internal enum CompanyType { GOVT, PRIVATE,PUBLIC, NGO}
+    public enum CompanyType { GOVT, PRIVATE,PUBLIC, NGO}
     [Table("Corporate")]
-    internal class Corporate : Customer
+   public class Corporate : Customer
     {
         [Column("Company_Type")]
         [EnumDataType(typeof(CompanyType))]

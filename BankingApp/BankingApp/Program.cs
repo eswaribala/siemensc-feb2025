@@ -15,6 +15,11 @@ var services=new ServiceCollection();
 services.AddDbContext<BankingContext>(options =>
 options.UseSqlServer(configuration.GetConnectionString("DefaultConn")));
 var provider=services.BuildServiceProvider();
+var context = provider.GetRequiredService<BankingContext>();
+
+Console.WriteLine("Database Connection Established...");
+
+Console.ReadKey();
 
 
 

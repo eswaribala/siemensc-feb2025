@@ -11,7 +11,7 @@ namespace BankingApp.Models
 {
     public enum Gender { MALE,FEMALE,TRANSGENDER}
     [Table("Individual")]
-    internal class Individual : Customer
+    public class Individual : Customer
     {
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:MM dd yyyy}")]

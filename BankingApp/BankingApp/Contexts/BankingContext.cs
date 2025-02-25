@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace BankingApp.Contexts
 {
-    internal class BankingContext:DbContext
+   public class BankingContext:DbContext
     {
         public BankingContext(DbContextOptions<BankingContext> dbContextOptions) : base(dbContextOptions) { 
         
-            this.Database.EnsureCreated();
+           // this.Database.EnsureCreated();
         }
 
         public DbSet<Customer> Customers { get; set; }
@@ -20,13 +20,6 @@ namespace BankingApp.Contexts
         public DbSet<Corporate> Corporates { get; set; }
         public DbSet<Address> Addresses { get; set; }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<Customer>().ToTable("Customer");
-            modelBuilder.Entity<Individual>().ToTable("Individual");
-            modelBuilder.Entity<Corporate>().ToTable("Corporate");
-            modelBuilder.Entity<Address>().ToTable("Address");
-        }
+       
     }
 }

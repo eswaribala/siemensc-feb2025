@@ -17,7 +17,7 @@ namespace BankingApp.Models
      * But We can inherit
      */
     [Table("Customer")]
-    internal abstract class Customer
+    public  class Customer
     {
         //sttaic variable
         //Field
@@ -33,21 +33,21 @@ namespace BankingApp.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Column("Account_No")]
-        protected long AccountNo { get; set; }
-        protected FullName FullName { get; set; }
+        public long AccountNo { get; set; }
+        public FullName FullName { get; set; }
         [Column("Email")]
         [RegularExpression("^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
             ErrorMessage = "Email Format Not matching")]
         [DefaultValue("")]
-        protected string Email {  get; set; }
+        public string Email {  get; set; }
         [Column("Phone_Number")]
         [RegularExpression("^([+]\\d{2}[ ])?\\d{10}$",
             ErrorMessage = "Mobile No Format Not matching")]
-        protected long PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
 
         [Column("Password")]
 
-        protected string Password {  get; set; }
+        public string Password {  get; set; }
 
         //protected abstract float ComputeInterest();
         ////Basic implementation

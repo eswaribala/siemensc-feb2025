@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace BankingApp.Models
 {
     [Table("Address")]
-    internal class Address
+    public class Address
     {
 
         [Key]

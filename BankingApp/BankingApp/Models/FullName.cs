@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace BankingApp.Models
 {
     [Owned]
-    internal class FullName
+    public class FullName
     {
         [Column("First_Name",TypeName ="varchar(100)")]
         [Required]
