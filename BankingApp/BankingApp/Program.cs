@@ -1,7 +1,10 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankingApp.Models;
+using System.Net.Http.Headers;
 
 Customer.BankName = "SBI";
+
+
 
 Customer customer = new Customer(Faker.RandomNumber.Next(1, 1000000), new FullName
 {
@@ -30,4 +33,14 @@ customer.Password=Faker.Identification.UsPassportNumber();
 
 Console.WriteLine($"AccountNo={customer.AccountNo}" +
     $"Email={customer.Email},PhoneNo={customer.PhoneNumber} created for the Bank {Customer.BankName}");
+
+
+
+//struct
+
+Transaction transaction = new Transaction();
+transaction.TransactionId = Faker.RandomNumber.Next(1, 1000000);
+transaction.Amount = Faker.RandomNumber.Next(1, 1000000);
+
+Console.WriteLine($"{transaction.TransactionId},{transaction.Amount}");
 Console.ReadKey();
