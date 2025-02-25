@@ -41,7 +41,7 @@ namespace BankingApp.Models
 
         public int CompareTo(Individual other)
         {
-            return this.DOB.CompareTo(other.DOB);
+            return this.FullName.FirstName.CompareTo(other.FullName.FirstName);
         }
     }
 }
