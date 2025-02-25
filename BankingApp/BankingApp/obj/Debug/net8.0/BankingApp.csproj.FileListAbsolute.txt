@@ -17,3 +17,4 @@ H:\SiemensC#TrainingFeb2025\BankingApp\BankingApp\obj\Debug\net8.0\refint\Bankin
 H:\SiemensC#TrainingFeb2025\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.pdb
 H:\SiemensC#TrainingFeb2025\BankingApp\BankingApp\obj\Debug\net8.0\BankingApp.genruntimeconfig.cache
 H:\SiemensC#TrainingFeb2025\BankingApp\BankingApp\obj\Debug\net8.0\ref\BankingApp.dll
+H:\SiemensC#TrainingFeb2025\BankingApp\BankingApp\bin\Debug\net8.0\Newtonsoft.Json.dll

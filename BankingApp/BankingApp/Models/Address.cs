@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BankingApp.Models
 {
-    public class Address
+    internal class Address
     {
         public string DoorNo {  get; set; }
         public string StreetName {  get; set; }

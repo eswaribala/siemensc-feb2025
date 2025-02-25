@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BankingApp.Models
 {
-    public enum CompanyType { GOVT, PRIVATE,PUBLIC, NGO}
-    public class Corporate : Customer
+    internal enum CompanyType { GOVT, PRIVATE,PUBLIC, NGO}
+    internal class Corporate : Customer
     {
         public CompanyType CompanyType { get; set; }
         public Corporate(long accountNo, FullName fullName) : base(accountNo, fullName)

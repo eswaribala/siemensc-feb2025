@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 namespace BankingApp.Models
 {
     public enum Gender { MALE,FEMALE,TRANSGENDER}
-    public class Individual : Customer
+    internal class Individual : Customer, IComparable<Individual>
     {
         public DateTime DOB {  get; set; }
         public Gender Gender { get; set; }
@@ -15,9 +16,31 @@ namespace BankingApp.Models
         {
         }
 
+        public void SetValues(string Email,string Password, long PhoneNo,Address Address)
+        {
+            this.Email = Email;
+            this.Password = Password;
+            this.Address= Address;
+            this.PhoneNumber = PhoneNo;
+        }
+
+        public override string ToString()
+        {
+            return this.AccountNo+","+this.FullName.FirstName+"," +this.PhoneNumber+","  + JsonConvert.SerializeObject(this, Formatting.Indented);
+        }
+
+
+
+
+        //mandatory
         protected override float ComputeInterest()
         {
             throw new NotImplementedException();
+        }
+
+        public int CompareTo(Individual other)
+        {
+            return this.DOB.CompareTo(other.DOB);
         }
     }
 }
