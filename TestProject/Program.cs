@@ -26,10 +26,34 @@ for (int i = 0; i < numbers.Length; i++)
     numbers[i] = Faker.RandomNumber.Next(100, 1000);
 
 numbers.ToList().ForEach(x => Console.WriteLine(x));
+int data = 100;
+//read only variable
+InDemo.ShowData(in data);
+
 Console.WriteLine("Enter Search Element");
 int searchElement = int.Parse(Console.ReadLine());
 
 Console.WriteLine($"Found the element in array={RefDemo.ProcessData(ref numbers,searchElement)}");
+
+//boxing and unboxing
+
+int age = 55; //value type --> stack
+//primitive to object 
+object obj = age; //---> refrence type heap 
+Console.WriteLine(obj);
+
+//unboxing
+//object to primitive
+age = (int)obj;
+
+//int to long
+
+int employeeId = Faker.RandomNumber.Next(10000, 1000000);
+
+//int to long
+long employeeNo = Convert.ToInt64(employeeId);
+
+
 
 
 //display 10 users
