@@ -10,7 +10,7 @@ namespace BankingApp.Contexts
 {
     internal class BankingContext:DbContext
     {
-        public BankingContext(DbContextOptions dbContextOptions) : base(dbContextOptions) { 
+        public BankingContext(DbContextOptions<BankingContext> dbContextOptions) : base(dbContextOptions) { 
         
             this.Database.EnsureCreated();
         }
