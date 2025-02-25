@@ -1,6 +1,8 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankingApp.Models;
 
+Customer.BankName = "SBI";
+
 Customer customer = new Customer(Faker.RandomNumber.Next(1, 1000000), new FullName
 {
     FirstName = Faker.Name.First(),
@@ -27,5 +29,5 @@ customer.Password=Faker.Identification.UsPassportNumber();
 //getter
 
 Console.WriteLine($"AccountNo={customer.AccountNo}" +
-    $"Email={customer.Email},PhoneNo={customer.PhoneNumber}");
+    $"Email={customer.Email},PhoneNo={customer.PhoneNumber} created for the Bank {Customer.BankName}");
 Console.ReadKey();

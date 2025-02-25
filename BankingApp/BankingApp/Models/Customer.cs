@@ -8,6 +8,9 @@ namespace BankingApp.Models
 {
     public class Customer
     {
+        //sttaic variable
+        public static string BankName { get; set; }
+
         public Customer(long accountNo, FullName fullName)
         {
             AccountNo = accountNo;
