@@ -38,8 +38,8 @@ Console.WriteLine($"AccountNo={customer.AccountNo}" +
 
 //struct
 
-Transaction transaction = new Transaction();
-transaction.TransactionId = Faker.RandomNumber.Next(1, 1000000);
+Transaction transaction = new Transaction(Faker.RandomNumber.Next(1, 1000000));
+
 transaction.Amount = Faker.RandomNumber.Next(1, 1000000);
 
 Console.WriteLine($"{transaction.TransactionId},{transaction.Amount}");
