@@ -1,16 +1,16 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankingApp.Models;
 
-Customer customer = new Customer();
-customer.AccountNo = Faker.RandomNumber.Next(1, 1000000);
-customer.Email = Faker.Internet.Email();
-customer.FullName = new FullName
+Customer customer = new Customer(Faker.RandomNumber.Next(1, 1000000), new FullName
 {
     FirstName = Faker.Name.First(),
     LastName = Faker.Name.Last(),
     MiddleName = Faker.Name.Middle(),
 
-};
+});
+
+customer.Email = Faker.Internet.Email();
+
 customer.Address = new Address
 {
     StreetName = Faker.Address.StreetName(),

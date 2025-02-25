@@ -8,8 +8,14 @@ namespace BankingApp.Models
 {
     public class Customer
     {
-        public long AccountNo {  get; set; }
-        public FullName FullName { get; set; }
+        public Customer(long accountNo, FullName fullName)
+        {
+            AccountNo = accountNo;
+            FullName = fullName;
+        }
+
+        public long AccountNo { get; }
+        public FullName FullName { get; }
         public string Email {  get; set; }
         public long PhoneNumber { get; set; }
 
