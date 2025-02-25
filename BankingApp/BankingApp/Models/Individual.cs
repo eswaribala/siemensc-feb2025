@@ -14,5 +14,10 @@ namespace BankingApp.Models
         public Individual(long accountNo, FullName fullName) : base(accountNo, fullName)
         {
         }
+
+        protected override float ComputeInterest()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

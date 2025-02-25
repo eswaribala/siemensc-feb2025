@@ -3,6 +3,8 @@ using BankingApp.Models;
 using System.Net.Http.Headers;
 
 Customer.BankName = "SBI";
+
+
 //upcasting
 Customer customer = new Individual(Faker.RandomNumber.Next(10000, 1000000), new FullName
 {

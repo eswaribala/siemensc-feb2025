@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace BankingApp.Models
 {
-    public class Customer
+    /*
+     * Abstract class object cannot be created
+     * But We can inherit
+     */
+    public abstract class Customer
     {
         //sttaic variable
         //Field
@@ -27,6 +31,7 @@ namespace BankingApp.Models
 
         protected string Password {  get; set; }
 
+        protected abstract float ComputeInterest();
 
     }
 }
