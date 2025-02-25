@@ -26,7 +26,8 @@ namespace BankingApp.Models
 
         public override string ToString()
         {
-            return this.AccountNo+","+this.FullName.FirstName+"," +this.PhoneNumber+","  + JsonConvert.SerializeObject(this, Formatting.Indented);
+            return this.AccountNo+","+this.FullName.FirstName+"," +
+                this.PhoneNumber+","  + this.Gender.ToString()+","+this.DOB.ToString();
         }
 
 
