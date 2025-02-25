@@ -42,5 +42,5 @@ Transaction transaction = new Transaction(Faker.RandomNumber.Next(1, 1000000));
 
 transaction.Amount = Faker.RandomNumber.Next(1, 1000000);
 
-Console.WriteLine($"{transaction.TransactionId},{transaction.Amount}");
+Console.WriteLine($"{transaction.TransactionId},{transaction.Amount}, {Transaction.ROI}");
 Console.ReadKey();
