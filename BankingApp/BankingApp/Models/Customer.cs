@@ -11,7 +11,7 @@ namespace BankingApp.Models
         public long AccountNo {  get; set; }
         public FullName FullName { get; set; }
         public string Email {  get; set; }
-        public string PhoneNumber { get; set; }
+        public long PhoneNumber { get; set; }
 
         public Address Address { get; set; }
 

@@ -21,7 +21,7 @@ customer.Address = new Address
     Region = Faker.Address.CaProvince()
 
 };
-customer.PhoneNumber = Faker.Phone.Number();
+customer.PhoneNumber = Faker.RandomNumber.Next(9000000000, 9999999999);
 customer.Password=Faker.Identification.UsPassportNumber();
 
 //getter
