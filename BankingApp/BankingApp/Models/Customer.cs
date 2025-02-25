@@ -9,7 +9,8 @@ namespace BankingApp.Models
     public class Customer
     {
         //sttaic variable
-        public static string BankName { get; set; }
+        //Field
+        public static string BankName;
 
         public Customer(long accountNo, FullName fullName)
         {
@@ -17,14 +18,14 @@ namespace BankingApp.Models
             FullName = fullName;
         }
 
-        public long AccountNo { get; }
-        public FullName FullName { get; }
-        public string Email {  get; set; }
-        public long PhoneNumber { get; set; }
+        protected long AccountNo { get; }
+        protected FullName FullName { get; }
+        protected string Email {  get; set; }
+        protected long PhoneNumber { get; set; }
 
-        public Address Address { get; set; }
+        protected Address Address { get; set; }
 
-        public string Password {  get; set; }
+        protected string Password {  get; set; }
 
 
     }
