@@ -1,6 +1,19 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using BankingApp.Models;
+using Microsoft.Extensions.Configuration;
 using System.Net.Http.Headers;
+
+var configuration=new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory())
+    .AddJsonFile("appsettings.json")
+    .Build();
+
+
+
+
+
+
+
 
 //create 100 individuals sort them based dob
 Individual[] individuals=new Individual[100];
