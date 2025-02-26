@@ -45,7 +45,12 @@ ICustomerRepository customerRepository=new CustomerRepository(context);
 //Console.WriteLine($"{customer.AccountNo},{customer.FullName.FirstName}"));
 
 //get customer by account no
-Customer responseCustomer = customerRepository.GetCustomerByAccountNo(3);
+//Customer responseCustomer = customerRepository.GetCustomerByAccountNo(3);
+//Console.WriteLine($"Retrieved Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
+
+//update customer
+Customer responseCustomer = customerRepository.UpdateCustomer(3, "param@gmail.com");
 Console.WriteLine($"Retrieved Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
+
 
 Console.ReadKey();

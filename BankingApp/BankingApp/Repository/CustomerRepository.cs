@@ -41,7 +41,14 @@ namespace BankingApp.Repository
 
         public Customer UpdateCustomer(long accountNo, string email)
         {
-            throw new NotImplementedException();
+            Customer customer=this._dbContext.Customers.FirstOrDefault(x=>x.AccountNo==accountNo);
+            if(customer!=null)
+            {
+                customer.Email = email;
+                this._dbContext.Customers.Update(customer);
+                this._dbContext.SaveChanges();
+            }
+            return customer;
         }
     }
 }
