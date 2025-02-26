@@ -17,7 +17,8 @@ namespace BankingApp.Contexts
         
             this.Database.EnsureCreated();
         }
-
+        //extra safety
+        //optional
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
