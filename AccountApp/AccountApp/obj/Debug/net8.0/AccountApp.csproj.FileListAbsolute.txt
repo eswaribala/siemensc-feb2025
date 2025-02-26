@@ -17,3 +17,4 @@ H:\SiemensC#TrainingFeb2025\AccountApp\AccountApp\obj\Debug\net8.0\refint\Accoun
 H:\SiemensC#TrainingFeb2025\AccountApp\AccountApp\obj\Debug\net8.0\AccountApp.pdb
 H:\SiemensC#TrainingFeb2025\AccountApp\AccountApp\obj\Debug\net8.0\AccountApp.genruntimeconfig.cache
 H:\SiemensC#TrainingFeb2025\AccountApp\AccountApp\obj\Debug\net8.0\ref\AccountApp.dll
+H:\SiemensC#TrainingFeb2025\AccountApp\AccountApp\bin\Debug\net8.0\Newtonsoft.Json.dll

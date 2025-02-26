@@ -1,8 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
 using AccountApp.Models;
+using AccountApp.Repositories;
+using Newtonsoft.Json;
 using System.Collections;
 using System.Net.Http.Headers;
+
 /*
 DirectDebit directDebit;
 BitArray bitArray=new BitArray(10);
@@ -38,6 +41,7 @@ int decimalNo = Faker.RandomNumber.Next(1, 100);
 Console.WriteLine($"Decimal Number={decimalNo}");
 stackDemo.ConvertDecimalToBinary(decimalNo);
 */
+/*
 Transaction transaction=null;
 Queue queue = new Queue();
 
@@ -66,5 +70,58 @@ while(queue.Count > 0)
 }
 
 Console.WriteLine("All the transactions done...");
+
+*/
+
+//List Demo
+
+ITransactionRepository transactionRepository = new TransactionRepository();
+AccountApp.Models.Transaction transaction = null;
+for(int i = 0; i < 100; i++)
+{
+    transaction = new Transaction
+    {
+        Id = i,
+        Amount = Faker.RandomNumber.Next(200, 10000),
+        TimeStamp = DateTime.Now.ToLocalTime().ToString(),
+        Sender = Faker.Name.FullName(),
+        Receiver = Faker.Name.FullName()
+
+    };
+    transactionRepository.AddTransaction(transaction);
+}
+
+//Retrieve all transactions
+transactionRepository.GetTransactions().ForEach(transaction =>
+{
+    Console.WriteLine(JsonConvert.SerializeObject(transaction));
+}
+
+);
+
+//Retrieve Specific Object
+Console.WriteLine("Get Transaction By Transaction Id.....");
+
+Console.WriteLine(JsonConvert.SerializeObject(transactionRepository
+    .GetTransactionById(Faker.RandomNumber.Next(0, 100)),Formatting.Indented));
+
+
+//Delete the object
+long id = Faker.RandomNumber.Next(0, 100);
+Console.WriteLine($"Delete Transaction By Transaction Id.....{id}");
+
+if (transactionRepository.DeleteTransaction(id))
+    Console.WriteLine("Transaction Deleted.....");
+else
+    Console.WriteLine("Transaction Not Deleted.....");
+
+
+//Sorted Transaction
+transactionRepository.GetSortedTransactions().ForEach(transaction =>
+{
+    Console.WriteLine(JsonConvert.SerializeObject(transaction));
+}
+
+);
 
 Console.ReadKey();
