@@ -37,7 +37,12 @@ var newCustomer = new Customer
 };
 
 ICustomerRepository customerRepository=new CustomerRepository(context);
-Customer responseCustomer=customerRepository.AddCustomer(newCustomer);
+//Customer responseCustomer=customerRepository.AddCustomer(newCustomer);
 
-Console.WriteLine($"Created Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
+//Console.WriteLine($"Created Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
+//read all customers
+customerRepository.GetAllCustomers().ForEach(customer => 
+Console.WriteLine($"{customer.AccountNo},{customer.FullName.FirstName}"));
+
+
 Console.ReadKey();

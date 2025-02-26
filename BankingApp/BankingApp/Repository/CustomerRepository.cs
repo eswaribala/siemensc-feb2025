@@ -31,7 +31,7 @@ namespace BankingApp.Repository
 
         public List<Customer> GetAllCustomers()
         {
-            throw new NotImplementedException();
+            return this._dbContext.Customers.ToList();
         }
 
         public Customer GetCustomerByAccountNo(long accountNo)
