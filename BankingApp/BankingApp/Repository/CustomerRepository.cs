@@ -1,5 +1,6 @@
 ﻿using BankingApp.Contexts;
 using BankingApp.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +27,15 @@ namespace BankingApp.Repository
 
         public bool DeleteCustomerByAccountNo(long accountNo)
         {
-            throw new NotImplementedException();
+            bool result = false;
+            Customer customer = this._dbContext.Customers.FirstOrDefault(x => x.AccountNo == accountNo);
+            if (customer != null)
+            {
+                this._dbContext.Customers.Remove(customer);
+                this._dbContext.SaveChanges();
+                result = true;
+            }
+            return result;
         }
 
         public List<Customer> GetAllCustomers()

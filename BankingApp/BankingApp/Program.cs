@@ -49,8 +49,11 @@ ICustomerRepository customerRepository=new CustomerRepository(context);
 //Console.WriteLine($"Retrieved Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
 
 //update customer
-Customer responseCustomer = customerRepository.UpdateCustomer(3, "param@gmail.com");
-Console.WriteLine($"Retrieved Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
-
+//Customer responseCustomer = customerRepository.UpdateCustomer(3, "param@gmail.com");
+//Console.WriteLine($"Retrieved Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
+if (customerRepository.DeleteCustomerByAccountNo(3))
+    Console.WriteLine($"Customer Deleted");
+else
+    Console.WriteLine("Customer Not Deleted");
 
 Console.ReadKey();
