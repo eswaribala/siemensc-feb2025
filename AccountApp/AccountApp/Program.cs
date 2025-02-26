@@ -2,14 +2,14 @@
 
 using AccountApp.Models;
 using System.Collections;
-
+/*
 DirectDebit directDebit;
 BitArray bitArray=new BitArray(10);
 
 for (int i = 0; i < 10; i++)
 {
     directDebit = new DirectDebit();
-
+    Console.WriteLine(directDebit.GetHashCode());
     directDebit.Amount = Faker.RandomNumber.Next(1000, 100000);
     if(directDebit.Amount <5000)
      bitArray[i] = false;
@@ -28,5 +28,12 @@ while (enumerator.MoveNext())
     else
         Console.WriteLine("Transaction UnSuccessful");
 }
+*/
+
+//Stack
+StackDemo stackDemo=new StackDemo();
+int decimalNo = Faker.RandomNumber.Next(1, 100);
+Console.WriteLine($"Decimal Number={decimalNo}");
+stackDemo.ConvertDecimalToBinary(decimalNo);
 
 Console.ReadKey();
