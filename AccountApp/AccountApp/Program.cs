@@ -1,11 +1,13 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
+using AccountApp.Exceptions;
 using AccountApp.Models;
 using AccountApp.Repositories;
 using Newtonsoft.Json;
 using System;
 using System.Collections;
 using System.Net.Http.Headers;
+using System.Security.Principal;
 
 
 
@@ -130,6 +132,8 @@ transactionRepository.GetSortedTransactions().ForEach(transaction =>
 double mantissa = (new Random().NextDouble() * 2.0) - 1.0;
 // choose -149 instead of -126 to also generate subnormal floats (*)
 double exponent = Math.Pow(2.0, new Random().Next(-126, 128));
+/*
+
 
 Account account = null;
 IAccountRepository accountRepository = new AccountRepository();
@@ -178,5 +182,33 @@ foreach(KeyValuePair<Account,List<Transaction>> keyValuePair in accountRepositor
         Console.WriteLine(JsonConvert.SerializeObject(transaction, Formatting.Indented));
     });
 }
+*/
+
+Account account = null;
+
+try
+{
+   account = new SavingsAccount
+    {
+        AccountId = -12,
+        RunningTotal = Faker.RandomNumber.Next(5000, 10000),
+        RateOfInterest = (float)(mantissa * exponent),
+        DOP = Faker.Identification.DateOfBirth()
+        //c# extension method
+
+
+
+};
+    Console.WriteLine(account.IsRunningTotalBelowMinimum());
+}
+catch(AccountIdException exception)
+{
+    Console.WriteLine(exception.Message);
+}
+
+
+string text = "Represents a collection of key/value pairs that are sorted by the keys and are accessible by key and by index";
+
+Console.WriteLine(text.WordCount());
 
 Console.ReadKey();

@@ -9,5 +9,7 @@ namespace AccountApp.Models
     internal class SavingsAccount:Account
     {
         public float RateOfInterest {  get; set; }
+
+        
     }
 }
