@@ -21,7 +21,9 @@ for (int i = 0; i < 10; i++)
 IEnumerator enumerator=bitArray.GetEnumerator();
 while (enumerator.MoveNext())
 {
-    if (bool.Parse(enumerator.Current.ToString()) == true)
+    string data = enumerator.Current.ToString();
+    Console.WriteLine($"BitArray Value={data}");
+    if (bool.Parse(data) == true)
         Console.WriteLine("Transaction Successful");
     else
         Console.WriteLine("Transaction UnSuccessful");
