@@ -3,8 +3,11 @@
 using AccountApp.Models;
 using AccountApp.Repositories;
 using Newtonsoft.Json;
+using System;
 using System.Collections;
 using System.Net.Http.Headers;
+
+
 
 /*
 DirectDebit directDebit;
@@ -74,7 +77,7 @@ Console.WriteLine("All the transactions done...");
 */
 
 //List Demo
-
+/*
 ITransactionRepository transactionRepository = new TransactionRepository();
 AccountApp.Models.Transaction transaction = null;
 for(int i = 0; i < 100; i++)
@@ -123,5 +126,57 @@ transactionRepository.GetSortedTransactions().ForEach(transaction =>
 }
 
 );
+*/
+double mantissa = (new Random().NextDouble() * 2.0) - 1.0;
+// choose -149 instead of -126 to also generate subnormal floats (*)
+double exponent = Math.Pow(2.0, new Random().Next(-126, 128));
+
+Account account = null;
+IAccountRepository accountRepository = new AccountRepository();
+for (int i = 0; i < 10; i++)
+{
+
+     account= new SavingsAccount
+    {
+        AccountId=i, 
+        RunningTotal = Faker.RandomNumber.Next(5000, 5000000),
+        RateOfInterest = (float)(mantissa * exponent),
+        DOP = Faker.Identification.DateOfBirth()
+
+    };
+
+    ITransactionRepository transactionRepository = new TransactionRepository();
+    AccountApp.Models.Transaction transaction = null;
+    for (int j = 0; j < Faker.RandomNumber.Next(3,20); j++)
+    {
+        transaction = new Transaction
+        {
+            Id = j,
+            Amount = Faker.RandomNumber.Next(200, 10000),
+            TimeStamp = DateTime.Now.ToLocalTime().ToString(),
+            Sender = Faker.Name.FullName(),
+            Receiver = Faker.Name.FullName()
+
+        };
+        transactionRepository.AddTransaction(transaction);
+    }
+//sorted list
+    accountRepository.AddAccount(account, transactionRepository.GetTransactions());
+
+
+}
+
+
+//show account and list of transactions as statement
+
+foreach(KeyValuePair<Account,List<Transaction>> keyValuePair in accountRepository.GetAllTransactions()){
+   
+    Console.WriteLine(JsonConvert.SerializeObject(keyValuePair.Key, Formatting.Indented));
+   
+    keyValuePair.Value.ForEach(transaction =>
+    {
+        Console.WriteLine(JsonConvert.SerializeObject(transaction, Formatting.Indented));
+    });
+}
 
 Console.ReadKey();

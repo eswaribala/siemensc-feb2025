@@ -8,6 +8,7 @@ namespace AccountApp.Models
 {
     internal class Account
     {
+        public int AccountId { get; set; }
         public int RunningTotal { get; set; }
         public DateTime DOP { get; set; }
     }
