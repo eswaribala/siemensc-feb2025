@@ -41,8 +41,11 @@ ICustomerRepository customerRepository=new CustomerRepository(context);
 
 //Console.WriteLine($"Created Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
 //read all customers
-customerRepository.GetAllCustomers().ForEach(customer => 
-Console.WriteLine($"{customer.AccountNo},{customer.FullName.FirstName}"));
+//customerRepository.GetAllCustomers().ForEach(customer => 
+//Console.WriteLine($"{customer.AccountNo},{customer.FullName.FirstName}"));
 
+//get customer by account no
+Customer responseCustomer = customerRepository.GetCustomerByAccountNo(3);
+Console.WriteLine($"Retrieved Customer: Id = {responseCustomer.AccountNo}, Name = {responseCustomer.FullName.FirstName}");
 
 Console.ReadKey();
