@@ -8,6 +8,7 @@ namespace AccountApp.Models
 {
     internal class Transaction
     {
+        public int Id { get; set; }
         public long Amount { get; set; }
         public string TimeStamp {  get; set; }
         public string Sender { get; set; }
